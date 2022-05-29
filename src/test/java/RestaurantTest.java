@@ -88,4 +88,19 @@ class RestaurantTest {
         List<String> itemNames = new ArrayList<String>();
         assertEquals(0,restaurant.calculateOrderValue(itemNames));
     }
+
+    @Test
+    public void order_value_should_be_zero_with_null_list_of_selected_items(){
+        List<String> itemNames = null;
+        assertEquals(0,restaurant.calculateOrderValue(itemNames));
+    }
+
+    @Test
+    public void order_value_should_be_calculated_correctly_for_list_of_selected_items(){
+        List<String> itemNames = new ArrayList<String>();
+        itemNames.add("Sweet corn soup");
+        itemNames.add("Vegetable lasagne");
+        assertEquals(388,restaurant.calculateOrderValue(itemNames));
+    }
+
 }
