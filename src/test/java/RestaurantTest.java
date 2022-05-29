@@ -76,5 +76,16 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    //TDD
 
+    //The order value should be calculated and returned,
+    //when list of selected Item Names (String) should be passed to this method
+    //total order value (int) should be returned
+    //The name of the item returned when the user selects the item is always in the menu,
+    // hence a fail case scenario/Exception scenario would be unnecessary.
+    @Test
+    public void order_value_should_be_zero_when_list_of_selected_items_is_empty(){
+        List<String> itemNames = new ArrayList<String>();
+        assertEquals(0,restaurant.calculateOrderValue(itemNames));
+    }
 }
